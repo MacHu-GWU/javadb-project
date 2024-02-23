@@ -29,6 +29,12 @@ workload_aws_profile_list = [
     prd_aws_profile,
 ]
 
+# --------------------------------------------------------------------------
+# Don't touch the code below until ``Run bootstrap scripts``
+# --------------------------------------------------------------------------
+project_name_slug = project_name.replace("_", "-")
+project_name_snake = project_name.replace("-", "_")
+
 
 def get_iam_resource_name(
     env_name: str,
@@ -38,12 +44,6 @@ def get_iam_resource_name(
 
 
 if __name__ == "__main__":
-    # --------------------------------------------------------------------------
-    # Don't touch the code below until ``Run bootstrap scripts``
-    # --------------------------------------------------------------------------
-    project_name_slug = project_name.replace("_", "-")
-    project_name_snake = project_name.replace("-", "_")
-
     bsm_devops = BotoSesManager(profile_name=devops_aws_profile)
 
     workload_bsm_list = [
