@@ -17,9 +17,10 @@ workload_bsm_list = [
     bsm_prd,
 ]
 
-project_name = "javdb"
+project_name = "javadb"
 project_name_slug = project_name.replace("_", "-")
 project_name_snake = project_name.replace("-", "_")
+
 github_stack_name = f"{project_name_slug}-github-oidc"
 github_org = "MacHu-GWU"
 github_repo = f"{project_name}-project"
@@ -120,7 +121,7 @@ def run_teardown_cdk_bootstrap():
 
 
 def run_teardown_github_action_open_id_connection():
-    aws_ops_alpha.boostrap.github_action.teardown_github_aws_ops_alphaaction_open_id_connection(
+    aws_ops_alpha.boostrap.github_action.teardown_github_action_open_id_connection(
         bsm_devops=bsm_devops,
         stack_name=github_stack_name,
     )
